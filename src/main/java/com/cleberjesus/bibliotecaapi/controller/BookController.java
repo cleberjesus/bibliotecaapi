@@ -46,9 +46,14 @@ public class BookController {
             return ResponseEntity.ok(result);
     }
 
+    @GetMapping("/by-author")
+    public List<Book> getByAuthor(@RequestParam("author") String author) {
+        return bookService.getByAuthor(author);
+    }
+
     @GetMapping
-    public List<Book> getByAuthor(@RequestParam("author") String author){
-       return bookService.getByAuthor(author);
+    public List<Book> getAllBooks(){
+        return bookService.getAll();
     }
 
 
