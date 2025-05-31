@@ -59,8 +59,8 @@ public class BookService {
     }
 
     public List<Book> getByAuthor(String author) {
-        List<Book> books = bookRepository.findByAuthor(author);
-        if (!books.isEmpty()) {
+        List<Book> books = bookRepository.findAllByAuthor(author);
+        if (books.isEmpty()) {
             throw new IllegalArgumentException("Nenhum livro encontrado para o autor: " + author);
         }
         return books;

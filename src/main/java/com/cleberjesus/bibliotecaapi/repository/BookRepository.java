@@ -9,7 +9,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     boolean findByTitle(String Title);
 
-    List<Book> findByAuthor(String author);
+    List<Book> findAllByAuthor(String author);
 
     boolean existsByTitle(String title);
 
