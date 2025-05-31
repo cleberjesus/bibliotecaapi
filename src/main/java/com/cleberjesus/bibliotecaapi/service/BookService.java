@@ -67,6 +67,12 @@ public class BookService {
     }
 
     public List<Book> getAll(){
+        List<Book> books = bookRepository.findAll();
+
+        if (books.isEmpty()){
+            throw new IllegalArgumentException("Não tem nenhum livro registrado");
+        }
+
         return bookRepository.findAll();
     }
 }
