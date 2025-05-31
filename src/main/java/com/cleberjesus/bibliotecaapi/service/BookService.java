@@ -54,7 +54,6 @@ public class BookService {
         if (!bookRepository.existsById(book.getId())) {
             throw new IllegalArgumentException("Não é possível editar pois não existe este Livro");
         }
-        registerBook(book);
         return bookRepository.save(book);
     }
 
