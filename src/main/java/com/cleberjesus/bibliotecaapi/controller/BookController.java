@@ -36,6 +36,7 @@ public class BookController {
 
    @PutMapping("{id}")
    public ResponseEntity<Book> edit(@PathVariable("id") Integer id, @RequestBody Book book){
+        book.setId(id);
         bookService.putBook(book);
         return ResponseEntity.status(HttpStatus.OK).body(book);
    }
